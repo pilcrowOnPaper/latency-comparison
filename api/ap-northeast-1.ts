@@ -5,15 +5,14 @@ export const config = {
 };
 
 export default function handler(
-    _: VercelRequest,
-    response: VercelResponse
-  ): VercelResponse {
-    return response
-      .status(200)
-      .setHeader("Content-Type", "text/html; utf-8")
-      .send(html);
-  }
-  
+  _: VercelRequest,
+  response: VercelResponse
+): VercelResponse {
+  return response
+    .status(200)
+    .setHeader("Content-Type", "text/html; charset=utf-8")
+    .send(html);
+}
 
 const html = `
 <!DOCTYPE html>

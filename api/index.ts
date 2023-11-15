@@ -10,7 +10,7 @@ export default function handler(
 ): VercelResponse {
   return response
     .status(200)
-    .setHeader("Content-Type", "text/html; utf-8")
+    .setHeader("Content-Type", "text/html; charset=utf-8")
     .send(html);
 }
 
