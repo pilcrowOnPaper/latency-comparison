@@ -28,7 +28,7 @@ const html = `
             const start = performance.now();
             await fetch("/api/us-east-1");
             const end = performance.now();
-            const result = end - start + "ms";
+            const result = Math.floor(end - start) + "ms";
             document.getElementById("us-east-1").innerText = "us-east-1: " + result;
         }
 
@@ -37,7 +37,7 @@ const html = `
             const start = performance.now();
             await fetch("/api/ap-northeast-1");
             const end = performance.now();
-            const result = end - start + "ms";
+            const result = Math.floor(end - start) + "ms";
             document.getElementById("ap-northeast-1").innerText = "ap-northeast-1: " + result;
         }
 
@@ -46,7 +46,7 @@ const html = `
             const start = performance.now();
             await fetch("/api/ap-northeast-1");
             const end = performance.now();
-            const result = end - start + "ms";
+            const result = Math.floor(end - start) + "ms";
             document.getElementById("ap-southeast-1").innerText = "ap-southeast-1: " + result;
         }
 
@@ -55,7 +55,7 @@ const html = `
             const start = performance.now();
             await fetch("/api/eu-west-1");
             const end = performance.now();
-            const result = end - start + "ms";
+            const result = Math.floor(end - start) + "ms";
             document.getElementById("eu-west-1").innerText = "eu-west-1: " + result;
         }
     </script>
