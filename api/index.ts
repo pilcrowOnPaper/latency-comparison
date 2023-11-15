@@ -1,13 +1,17 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+
 export const config = {
   regions: ["iad1"],
 };
 
-export default function handler(): Response {
-  return new Response(html, {
-    headers: {
-      "Content-Type": "text/html; utf-8",
-    },
-  });
+export default function handler(
+  _: VercelRequest,
+  response: VercelResponse
+): VercelResponse {
+  return response
+    .status(200)
+    .setHeader("Content-Type", "text/html; utf-8")
+    .send(html);
 }
 
 const html = `
