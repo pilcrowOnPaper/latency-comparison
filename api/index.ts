@@ -36,7 +36,7 @@ const html = `
             await fetch("/api/us-east-1");
             const end = performance.now();
             const result = end - start + "ms";
-            document.getElementById("us-east-1").innerText = result;
+            document.getElementById("us-east-1").innerText = "us-east-1: " + result;
         }
 
         async function apNorthEast1 () {
@@ -45,7 +45,7 @@ const html = `
             await fetch("/api/ap-northeast-1");
             const end = performance.now();
             const result = end - start + "ms";
-            document.getElementById("ap-northeast-1").innerText = result;
+            document.getElementById("ap-northeast-1").innerText = "ap-northeast-1: " + result;
         }
     </script>
 </html>
