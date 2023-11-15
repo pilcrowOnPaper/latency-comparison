@@ -23,9 +23,9 @@ const html = `
         <p id="eu-west-1">eu-west-1:</p>
     </body>
     <script>
-        document.getElementById("start").onclick(() => {
+        document.getElementById("start").onclick = () => {
             Promise.all([usEast1(), apNorthEast1(),apSouthEast1(), euWest1()]);
-        })
+        }
 
         async function usEast1() {
             document.getElementById("us-east-1").innerText = "us-east-1:"
