@@ -56,7 +56,7 @@ const html = `
             await fetch("/api/eu-west-1");
             const end = performance.now();
             const result = end - start + "ms";
-            document.getElementById("ue-west-1").innerText = "ue-west-1: " + result;
+            document.getElementById("eu-west-1").innerText = "eu-west-1: " + result;
         }
     </script>
 </html>
