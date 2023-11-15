@@ -26,18 +26,18 @@ const html = `
 
         async function usEast1 () {
             document.getElementById("us-east-1").innerText = ""
-            const start = now();
+            const start = performance.now();
             await fetch("/api/us-east-1");
-            const end = now();
+            const end = performance.now();
             const result = end - start + "ms";
             document.getElementById("us-east-1").innerText = result;
         }
 
         async function apNorthEast1 () {
             document.getElementById("ap-northeast-1").innerText = ""
-            const start = now();
+            const start = performance.now();
             await fetch("/api/ap-northeast-1");
-            const end = now();
+            const end = performance.now();
             const result = end - start + "ms";
             document.getElementById("ap-northeast-1").innerText = result;
         }
