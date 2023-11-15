@@ -15,13 +15,17 @@ const html = `
 <!DOCTYPE html>
 <html>
     <body>
+        <h1>Latency test</h1>
+        <button id="start">Start</button>
         <p id="us-east-1">us-east-1:</p>
         <p id="ap-northeast-1">ap-northeast-1:</p>
         <p id="ap-southeast-1">ap-southeast-1:</p>
         <p id="eu-west-1">eu-west-1:</p>
     </body>
     <script>
-        Promise.all([usEast1(), apNorthEast1(),apSouthEast1(), euWest1()]);
+        document.getElementById("start").onclick(() => {
+            Promise.all([usEast1(), apNorthEast1(),apSouthEast1(), euWest1()]);
+        })
 
         async function usEast1() {
             document.getElementById("us-east-1").innerText = "us-east-1:"
