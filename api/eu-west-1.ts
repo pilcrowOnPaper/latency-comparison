@@ -1,11 +1,11 @@
 export const config = {
   runtime: "edge",
-  regions: ["iad1"],
+  regions: ["dub1"],
 };
 
 export default function handler(): Response {
   const body = JSON.stringify({
-    region: "us-east-1",
+    region: "eu-west-1",
   });
   return new Response(body, {
     headers: {
