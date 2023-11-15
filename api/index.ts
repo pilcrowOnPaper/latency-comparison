@@ -17,50 +17,34 @@ const html = `
     <body>
         <h1>Latency test</h1>
         <button id="start">Start</button>
-        <p id="us-east-1">us-east-1:</p>
-        <p id="ap-northeast-1">ap-northeast-1:</p>
-        <p id="ap-southeast-1">ap-southeast-1:</p>
-        <p id="eu-west-1">eu-west-1:</p>
+        <div id="results"></div>
     </body>
     <script>
+        const regions = [
+            "af-south-1",
+            "ap-northeast-1",
+            "ap-south-east-1",
+            "eu-west-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-1",
+        ];
+
         document.getElementById("start").onclick = () => {
-            Promise.all([usEast1(), apNorthEast1(),apSouthEast1(), euWest1()]);
+            document.getElementById("results").innerHTML = "";
+            for (const region of regions) {
+                getResult(region)
+            }
         }
 
-        async function usEast1() {
-            document.getElementById("us-east-1").innerText = "us-east-1:"
+        async function getResult(region) {
             const start = performance.now();
-            await fetch("/api/us-east-1");
+            await fetch("/api/" + region);
             const end = performance.now();
             const result = Math.floor(end - start) + "ms";
-            document.getElementById("us-east-1").innerText = "us-east-1: " + result;
-        }
-
-        async function apNorthEast1() {
-            document.getElementById("ap-northeast-1").innerText = "ap-northeast-1:"
-            const start = performance.now();
-            await fetch("/api/ap-northeast-1");
-            const end = performance.now();
-            const result = Math.floor(end - start) + "ms";
-            document.getElementById("ap-northeast-1").innerText = "ap-northeast-1: " + result;
-        }
-
-        async function apSouthEast1() {
-            document.getElementById("ap-southeast-1").innerText = "ap-southeast-1:"
-            const start = performance.now();
-            await fetch("/api/ap-northeast-1");
-            const end = performance.now();
-            const result = Math.floor(end - start) + "ms";
-            document.getElementById("ap-southeast-1").innerText = "ap-southeast-1: " + result;
-        }
-
-        async function euWest1() {
-            document.getElementById("eu-west-1").innerText = "eu-west-1:"
-            const start = performance.now();
-            await fetch("/api/eu-west-1");
-            const end = performance.now();
-            const result = Math.floor(end - start) + "ms";
-            document.getElementById("eu-west-1").innerText = "eu-west-1: " + result;
+            const p = document.createElement("p");
+            p.innerText = region + ": " + result;
+            document.getElementById("results").appendChild(p);
         }
     </script>
 </html>
