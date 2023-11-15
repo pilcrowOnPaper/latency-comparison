@@ -23,7 +23,7 @@ const html = `
         const regions = [
             "af-south-1",
             "ap-northeast-1",
-            "ap-south-east-1",
+            "ap-southeast-1",
             "eu-west-1",
             "sa-east-1",
             "us-east-1",
