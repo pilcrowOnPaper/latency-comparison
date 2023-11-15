@@ -31,7 +31,7 @@ const html = `
         Promise.all([usEast1(), apNorthEast1()]);
 
         async function usEast1 () {
-            document.getElementById("us-east-1").innerText = ""
+            document.getElementById("us-east-1").innerText = "us-east-1:"
             const start = performance.now();
             await fetch("/api/us-east-1");
             const end = performance.now();
@@ -40,7 +40,7 @@ const html = `
         }
 
         async function apNorthEast1 () {
-            document.getElementById("ap-northeast-1").innerText = ""
+            document.getElementById("ap-northeast-1").innerText = "ap-northeast-1:"
             const start = performance.now();
             await fetch("/api/ap-northeast-1");
             const end = performance.now();
